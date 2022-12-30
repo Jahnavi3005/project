@@ -25,7 +25,7 @@ class LoginUser extends Component {
             username : this.state.username,
             password : this.state.password,
         }
-        axios.post("https://project-backend-yww5.onrender.com",login).then((res)=>{
+        axios.post("https://project-backend-yww5.onrender.com/users/login",login).then((res)=>{
            let token = res.data.token;
            let username = res.data.user;
            localStorage.setItem("token",token);

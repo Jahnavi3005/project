@@ -28,7 +28,7 @@ class RegisterUser extends Component {
            email : this.state.email,
            password : this.state.password,
        }
-       axios.post("https://project-backend-yww5.onrender.com",user).then((res)=>{
+       axios.post("https://project-backend-yww5.onrender.com/users/create",user).then((res)=>{
            window.location = "/";
        }).catch((err)=>{
            console.error("Could not register user.")

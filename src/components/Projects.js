@@ -23,7 +23,7 @@ class Projects extends Component {
         let projectName = this.state.projectName;
         this.setState({projectName:""})
         let token = localStorage.getItem("token");
-        axios.post("https://project-backend-yww5.onrender.com",
+        axios.post("https://project-backend-yww5.onrender.com/projects/new",
             {projectName: projectName },
             {
                 headers: {
@@ -42,7 +42,7 @@ class Projects extends Component {
     }
     getProjects() {
         let token = localStorage.getItem("token");
-        axios.get("http://localhost:5000/projects",  {
+        axios.get("https://project-backend-yww5.onrender.com/projects",  {
             headers: {
                 'Authorization': 'Bearer ' + token
             }

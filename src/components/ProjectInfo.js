@@ -28,7 +28,7 @@ class ProjectInfo extends Component {
         let description = this.state.newTaskDescription;
         this.setState({ newTaskDescription: "" });
         let token = localStorage.getItem("token");
-        axios.post("https://project-backend-yww5.onrender.com",
+        axios.post("https://project-backend-yww5.onrender.com/tasks/create",
             { description: description, projectId: this.props.project._id },
             {
                 headers: {
@@ -46,7 +46,7 @@ class ProjectInfo extends Component {
     completeTask(event) {
         let taskId = event.target.id;
         let token = localStorage.getItem("token");
-        axios.post("http://127.0.0.1:5000/tasks/" + taskId + "/complete",
+        axios.post("https://project-backend-yww5.onrender.com/tasks/" + taskId + "/complete",
             {},
             {
                 headers: {
@@ -63,7 +63,7 @@ class ProjectInfo extends Component {
     removeTask(event) {
         let taskId = event.currentTarget.id;
         let token = localStorage.getItem("token");
-        axios.delete("http://127.0.0.1:5000/tasks/" + taskId + "/delete",
+        axios.delete("https://project-backend-yww5.onrender.com/tasks/" + taskId + "/delete",
             {
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -79,7 +79,7 @@ class ProjectInfo extends Component {
     removeProject(event) {
         let projectId = event.currentTarget.id;
         let token = localStorage.getItem("token");
-        axios.delete("http://127.0.0.1:5000/projects/" + projectId + "/delete",
+        axios.delete("https://project-backend-yww5.onrender.com/projects/" + projectId + "/delete",
             {
                 headers: {
                     'Authorization': 'Bearer ' + token
