@@ -28,7 +28,7 @@ class ProjectInfo extends Component {
         let description = this.state.newTaskDescription;
         this.setState({ newTaskDescription: "" });
         let token = localStorage.getItem("token");
-        axios.post("http://127.0.0.1:5000/tasks/create",
+        axios.post("https://project-backend-yww5.onrender.com",
             { description: description, projectId: this.props.project._id },
             {
                 headers: {

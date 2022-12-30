@@ -23,7 +23,7 @@ class Projects extends Component {
         let projectName = this.state.projectName;
         this.setState({projectName:""})
         let token = localStorage.getItem("token");
-        axios.post("http://localhost:5000/projects/new",
+        axios.post("https://project-backend-yww5.onrender.com",
             {projectName: projectName },
             {
                 headers: {
